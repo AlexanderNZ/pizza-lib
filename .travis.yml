@@ -30,6 +30,10 @@ script:
   - ./gradlew test
   - gulp test
   - ./gradlew bootRepackage -Pprod -x test
+deploy:
+  provider: heroku
+  api_key:
+    secure: "$API-KEY"
 notifications:
   webhooks:
     on_success: change  # options: [always|never|change] default: always
