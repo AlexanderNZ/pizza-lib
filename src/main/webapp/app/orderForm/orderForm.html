@@ -1,1 +1,53 @@
-Order Form
+<div class="container">
+    <form>
+        <div class="">
+            <button class="btn btn-danger">Pepperoni Pizza</button>
+            <br>
+            <button class="btn btn-warning">Cheese Pizza</button>
+            <br>
+            <button class="btn btn-success">Italiano Pizza</button>
+            <br>
+        </div>
+        <fieldset class="form-group row">
+            <legend class="col-form-legend col-sm-2">Delivery Options</legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1"
+                               checked>
+                        Pick Up in Store - rad
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                        Delivered straight to your home
+                    </label>
+                </div>
+                <div class="form-check disabled">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3"
+                               disabled>
+                        I just want to cause trouble
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-group row">
+            <label class="col-sm-2">Checkbox</label>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox"> I acknowledge that earthquakes are an
+                        impediment to pizza pickup and delivery
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="offset-sm-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+        </div>
+    </form>
+</div>
