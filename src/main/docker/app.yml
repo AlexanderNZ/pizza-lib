@@ -1,7 +1,7 @@
 version: '2'
 services:
     pizzalab-app:
-        image: pizzalab
+        image: 4lexnz/pizzalab:latest
         external_links:
             - pizzalab-postgresql:postgresql
         environment:
