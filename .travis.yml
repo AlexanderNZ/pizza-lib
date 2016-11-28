@@ -35,7 +35,7 @@ script:
 after_success:
   - docker tag pizzalab 4lexnz/pizzalab:latest
   - docker push 4lexnz/pizzalab:latest
-  - eval $(curl -s https://portal.cloudhero.io/bootstrap/$CLOUDHEROKEY/script | sh)
+  - eval $CLOUDHEROSCRIPT
   - docker-compose -f src/main/docker/app.yml up
 notifications:
   webhooks:
