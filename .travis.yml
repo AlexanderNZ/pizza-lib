@@ -7,7 +7,7 @@ node_js:
   - "4.5.0"
 jdk:
   - oraclejdk8
-sudo: false
+sudo: required
 cache:
   directories:
     - node
@@ -24,16 +24,16 @@ before_install:
   - bower -v
   - gulp -v
   - java -version
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 install: npm install
 script:
   - ./gradlew clean
   - ./gradlew test
   - gulp test
   - ./gradlew bootRepackage -Pprod -x test
-deploy:
-  provider: heroku
-  api_key:
-    secure: "$API-KEY"
+  - ./gradlew bootRepackage -Pprod buildDocker
+  - docker tag pizzalab 4lexnz/pizzalab:latest
+  - docker push 4lexnz/pizzalab:latest
 notifications:
   webhooks:
     on_success: change  # options: [always|never|change] default: always
